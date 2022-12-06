@@ -1,0 +1,42 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    Tracker
+{% endblock title %}
+
+{% block content %}
+
+<main>
+    <div>
+        <h1>My Projects</h1>
+        {% if project_list|length == 0 %}
+        <p>
+            You are not assigned to any projects
+        </p>
+        {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Number of tasks</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for project in project_list %}
+                <tr>
+                    <td>{{ project.name }}</td>
+                    <td>{{project.name}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+        {% endif %}
+    </div>
+
+
+</main>
+
+{% endblock content %}
