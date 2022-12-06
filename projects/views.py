@@ -4,7 +4,7 @@ from .models import Project
 # Create your views here.
 
 
-def project_list(request):
+def list_projects(request):
     project_list = Project.objects.all()
     context = {"project_list": project_list}
 
