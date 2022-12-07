@@ -54,5 +54,5 @@ def user_signup(request):
     else:
         form = SignUpForm()
 
-    context = {"form":form}
+    context = {"form": form}
     return render(request, "accounts/signup.html", context)
