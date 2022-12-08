@@ -11,6 +11,9 @@
         <p>{{ show_project.description}}</p>
         <h2>Tasks</h2>
     </div>
+    <p>
+        <a href="{% url 'create_task'%}">Create a new task</a>
+    </p>
     {% if show_project.tasks.count == 0 %}
     <p>
         This project has no tasks
