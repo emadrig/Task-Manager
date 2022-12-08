@@ -9,30 +9,32 @@
 
 <main>
     <div>
-        <h1>My Projects</h1>
+        <h1>My Tasks</h1>
         <p>
         <a href="{% url 'create_project'%}">Create a new project</a>
         </p>
-        {% if project_list|length == 0 %}
+        {% if task_list|length == 0 %}
         <p>
-            You are not assigned to any projects
+            You have no tasks
         </p>
         {% else %}
         <table>
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Number of tasks</th>
+                    <th>Start date</th>
+                    <th>Due date</th>
+                    <th>Is completed</th>
                 </tr>
             </thead>
 
             <tbody>
-                {% for project in project_list %}
+                {% for task in task_list %}
                 <tr>
-                    <td>
-                        <a href="{% url 'show_project' project.id %}">{{ project.name }}</a>
-                    </td>
-                    <td>{{project.tasks.count}}</td>
+                    <td>{{task.name}}</td>
+                    <td>{{task.start_date}}</td>
+                    <td>{{task.due_date}}</td>
+                    <td>{{task.is_completed|yesno:"yes,no"}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
