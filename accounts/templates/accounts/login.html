@@ -3,17 +3,15 @@
 {% block title %}
     Tracker
 {% endblock title %}
-
 {% block content %}
-
-<main>
-    <div>
-    <h1>Login</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button>Login</button>
-    </form>
-    </div>
-</main>
+    <main>
+        <div>
+            <h1>Login</h1>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button>Login</button>
+            </form>
+        </div>
+    </main>
 {% endblock content %}
